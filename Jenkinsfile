@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages{
     stage('build') {
-      step{
+      steps {
         echo 'hello there#########'
         nodejs('nodejs-17.5') {
           sh ' yarn install'
@@ -11,7 +11,7 @@ pipeline {
       }
     }
     stage('test') {
-      step{
+      steps {
         echo 'hello there-----------'
         withGradle() {
           sh './gradlew -v'
